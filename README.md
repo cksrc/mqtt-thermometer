@@ -1,6 +1,3 @@
-## Demo
-https://mqtt-thermometer.herokuapp.com/
-
 ## Setup
 
 Run `yarn` to install all dependencies
