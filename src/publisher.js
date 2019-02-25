@@ -10,4 +10,8 @@ module.exports = function publisher(uri) {
       console.log("Temperature changed: ", temperature);
     }, 5000);
   });
+
+  client.on("error", function(error) {
+    console.log("Error", error)
+  });
 };
