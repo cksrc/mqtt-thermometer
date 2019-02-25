@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "faker": "^4.1.0",
+    "mosca": "^2.8.3",
+    "mqtt": "^2.18.8",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "react-thermometer-component": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "broker": "node ./src/broker.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

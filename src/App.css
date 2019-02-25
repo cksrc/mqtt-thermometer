@@ -22,7 +22,12 @@
 .App-link {
   color: #61dafb;
 }
-
+.thermometer ul.thermometer__statistics li {
+  left: 10px;
+}
+.thermometer--theme-light ul.thermometer__statistics li {
+  color: white;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
