@@ -7,6 +7,11 @@ var settings = {
     port: 8080,
     bundle: true,
     static: "./"
+  },
+  https: {
+    port: 443,
+    bundle: true,
+    static: "./"
   }
 };
 
