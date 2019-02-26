@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Thermometer from "react-thermometer-component";
 import "./App.css";
-import { config } from "./config";
 
-const mqtt = require("mqtt");
+const config = require("./config")[process.env.REACT_APP_HOST_ENV];
+let ws = null;
 
 class App extends Component {
   constructor(props) {
@@ -11,25 +11,13 @@ class App extends Component {
     this.state = { temperature: "0" };
   }
   componentDidMount() {
-    this.subscribe();
-  }
-  subscribe() {
-    console.log(config.uri);
-    let client = mqtt.connect(config.uri);
-    client.on("connect", function() {
-      console.log("Connected to MQTT broker");
-      client.subscribe("temperature-topic", function(err) {
-        if (!err) {
-          console.log("Subscribed on temperature-topic");
-        }
-      });
-    });
-
-    client.on("message", (topic, message) => {
-      let context = message.toString();
-      console.log(topic, context);
-      this.setState({ temperature: context });
-    });
+    ws = new WebSocket(config.ws.host + ":" + config.ws.port);
+    ws.onmessage = message => {
+      this.setState({ temperature: message.data });
+    };
+    ws.onclose = () => {
+      console.log("Bye bye")
+    }
   }
 
   render() {

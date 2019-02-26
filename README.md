@@ -2,13 +2,17 @@
 
 Run `yarn` to install all dependencies
 
-## Start mqtt broker (optional)
-In case you do not already have an mqtt broker run `yarn broker` to start a simple broker on localhost. By default, the broker runs on [http://localhost:8080](http://localhost:8080) which can be edited in `config.js`<br>
+## Run with mock MQTT
+In case you do not already have an mqtt broker and you wish to test the app run 
+### `yarn mock`
+This command will initiate a mock broker and publisher on [http://localhost:8080](http://localhost:8080). Port and url can be edited in `config.js`<br>
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Start web app
-Run `yarn start` to setup the web app, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Run with mosquito MQTT (broker without ws support)
+Run 
+###`yarn real` 
+to setup the web app, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ## Build for production 
