@@ -36,7 +36,7 @@ module.exports = {
     },
     ws: {
       host: "ws://mqtt-thermometer.herokuapp.com",
-      port: 8080
+      port: 80
     }
   }
 };
