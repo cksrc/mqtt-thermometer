@@ -18,13 +18,13 @@
     "npm-run-all": "^4.1.5"
   },
   "scripts": {
-    "mock": "NODE_ENV=DEV REACT_APP_HOST_ENV=DEV npm-run-all -p ws-server mock-broker start",
-    "real": "NODE_ENV=PROD REACT_APP_HOST_ENV=PROD npm-run-all -p ws-server mqtt-proxy start",
-    "heroku": "",
+    "mock": "NODE_ENV=DEV REACT_APP_HOST_ENV=DEV npm-run-all -p ws-server mock-broker fe",
+    "real": "NODE_ENV=PROD REACT_APP_HOST_ENV=PROD npm-run-all -p ws-server mqtt-proxy fe",
     "mock-broker": "node ./src/mock/broker.js",
     "ws-server": "node ./src/ws-server.js",
     "mqtt-proxy": "node ./src/mqtt-proxy.js",
-    "start": "react-scripts start",
+    "fe": "react-scripts start",
+    "start": "npm-run-all -p ws-server mqtt-proxy fe",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
